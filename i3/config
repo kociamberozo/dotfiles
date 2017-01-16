@@ -190,16 +190,25 @@ exec --no-startup-id i3-msg 'workspace 10 Random; exec shutter'
 #exec --no-startup-id i3-msg 'workspace 1 IRC; exec hexchat'
 exec --no-startup-id i3-msg 'workspace 9 Mail; exec thunderbird'
 
-exec ifconfig wlp2s0 mtu 1492 up
+#exec ifconfig wlp2s0 mtu 1492 up
 exec --no-startup-id nm-applet
 exec --no-startup-id xsetroot -solid "black"
 
-# screen saver DPMS setup
+# screen saver/DPMS setup
+
+exec xset s noexpose
+exec xset s noblank
+	#change timeout and cycle to 0s
 exec xset s 0 0
+	#turn screensaver off
 exec xset s off
-#exec xset -dpms
-#exec xset s noblank
+	#stop monitor from powering off
+exec xset -dpms
 
 # i3lock after lid open
 exec --no-startup-id xss-lock fuzzy_lock
 
+# do not disable touchpad while typing
+exec xinput set-prop --type=int --format=8 "SynPS/2 Synaptics TouchPad" 293 0
+
+exec alias cd='cd $@ && ls $@ --color '
