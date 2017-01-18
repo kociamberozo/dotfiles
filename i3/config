@@ -196,13 +196,11 @@ exec --no-startup-id xsetroot -solid "black"
 
 # screen saver/DPMS setup
 
+exec xset r off
 exec xset s noexpose
 exec xset s noblank
-	#change timeout and cycle to 0s
 exec xset s 0 0
-	#turn screensaver off
 exec xset s off
-	#stop monitor from powering off
 exec xset -dpms
 
 # i3lock after lid open
