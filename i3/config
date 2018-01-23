@@ -210,3 +210,5 @@ exec --no-startup-id xss-lock fuzzy_lock
 exec xinput set-prop --type=int --format=8 "SynPS/2 Synaptics TouchPad" 293 0
 
 exec alias cd='cd $@ && ls $@ --color '
+
+#siema
